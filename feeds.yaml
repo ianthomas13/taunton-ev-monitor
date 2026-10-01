@@ -1,0 +1,59 @@
+# Taunton EV charger monitor — feed configuration
+#
+# Each feed is an operator's statutory open-data endpoint (Public Charge Point
+# Regulations 2023, OCPI 2.2.1 "locations" module). The poller downloads the
+# locations list, keeps only sites within `radius_miles` of the centre point,
+# and records the status of every EVSE (charging bay).
+#
+# To switch a feed on: set `enabled: true`. If it needs a key, add the key as a
+# GitHub Actions secret and put that secret's name in `token_env`.
+
+centre:
+  name: Taunton town centre
+  lat: 51.0153
+  lon: -3.1030
+radius_miles: 3
+
+feeds:
+  # --- Open, no key needed ------------------------------------------------
+  - name: MFG EV Power
+    url: https://opendata.motorfuelgroup.net/locations
+    enabled: true
+    note: MFG Taunton, Priory Bridge Road (12 ultra-rapid)
+
+  - name: Clenergy EV
+    url: https://api.clenergy.online/development/pcpr/locations
+    enabled: true
+    note: Riverain Lodge (1 fast)
+
+  # --- Need a key or signed agreement first -------------------------------
+  - name: bp pulse
+    # Served through Eco-Movement's PCPR API. Request a key via
+    # https://www.bppulse.co.uk/help-centre/charging/faq/public-charge-point-regulations
+    url: https://open-chargepoints.com/api/ocpi/cpo/2.2.1/locations
+    token_env: BP_PULSE_TOKEN
+    auth_scheme: Token
+    enabled: false
+    note: M&S East Street (4 rapid)
+
+  - name: InstaVolt
+    # Email InstaVolt for their Open Data Agreement; they send the URL + credentials.
+    url: REPLACE_WITH_URL_FROM_INSTAVOLT
+    token_env: INSTAVOLT_TOKEN
+    auth_scheme: Token
+    enabled: false
+    note: Deane House / Belvedere Road (4 rapid), Blackbrook (1 rapid)
+
+  - name: Smart Charge (Sainsbury's)
+    url: REPLACE_WITH_URL_FROM_SMART_CHARGE
+    token_env: SMART_CHARGE_TOKEN
+    auth_scheme: Token
+    enabled: false
+    note: Sainsbury's Hankridge Farm (6 ultra-rapid)
+
+  - name: Somerset Council car parks (Swarco eVolt)
+    url: REPLACE_WITH_URL_FROM_SWARCO_EVOLT
+    token_env: SWARCO_TOKEN
+    auth_scheme: Token
+    enabled: false
+    note: Crescent, Belvedere Rd, Wood St, Castle St car parks
