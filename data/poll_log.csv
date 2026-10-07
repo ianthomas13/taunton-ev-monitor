@@ -953,3 +953,5 @@ polled_at_utc,operator,ok,locations_total,locations_in_radius,evses,error
 2026-10-07T11:34:07Z,Clenergy EV,1,1399,0,0,
 2026-10-07T11:48:39Z,MFG EV Power,1,597,3,18,
 2026-10-07T11:48:39Z,Clenergy EV,1,1399,0,0,
+2026-10-07T11:59:51Z,MFG EV Power,1,597,3,18,
+2026-10-07T11:59:51Z,Clenergy EV,1,1399,0,0,
