@@ -1975,3 +1975,5 @@ polled_at_utc,operator,ok,locations_total,locations_in_radius,evses,error
 2026-10-12T17:03:00Z,Clenergy EV,1,1400,0,0,
 2026-10-12T17:20:15Z,MFG EV Power,0,0,0,0,TimeoutError: The read operation timed out
 2026-10-12T17:20:15Z,Clenergy EV,1,1400,0,0,
+2026-10-12T17:38:14Z,MFG EV Power,1,597,3,18,
+2026-10-12T17:38:14Z,Clenergy EV,1,1400,0,0,
