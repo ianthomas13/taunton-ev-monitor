@@ -3103,3 +3103,5 @@ polled_at_utc,operator,ok,locations_total,locations_in_radius,evses,error
 2026-10-22T21:39:15Z,Clenergy EV,1,1414,0,0,
 2026-10-22T22:07:48Z,MFG EV Power,1,598,3,18,
 2026-10-22T22:07:48Z,Clenergy EV,1,1414,0,0,
+2026-10-22T22:33:29Z,MFG EV Power,0,0,0,0,URLError: <urlopen error timed out>
+2026-10-22T22:33:29Z,Clenergy EV,1,1414,0,0,
